@@ -1,3 +1,14 @@
+# SLACK OVERLOW
+This is a project that is created for fulfilling Software House's task. It shows web app that provides a tool for giving questions and answers like Stack Overflow. But we changed it as Slack Overlow.
+
+## TEAM
+Members of this project are:
+1. [Herri Purba](https://www.instagram.com/herripurba/)
+1. [Muhammad Raihan](https://www.instagram.com/haann.m/)
+1. [Pramudya Tiandana Wisnu Gautama](https://www.instagram.com/wisnupramoedya/)
+
+## Created Using Laravel
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
