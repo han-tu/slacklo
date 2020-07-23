@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 Route::get('/questions/create', 'QuestionController@create');
 Route::post('/questions/store', 'QuestionController@store');
+Route::get('/questions/edit/{id}', 'QuestionController@edit');
+Route::put('/questions/update/{id}', 'QuestionController@update');
+Route::get('/questions/delete/{id}', 'QuestionController@delete');
+Route::get('/questions/{id}', 'QuestionController@index');
 
 Auth::routes();
 
