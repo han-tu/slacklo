@@ -7,11 +7,11 @@
             <div class="card">
                 <div class="card-header">
                     <span style="font-size: 1.5rem">{{ __('QUESTIONS') }}</span>
-                    <button class="float-right btn btn-success text-white rounded">Ask Question +</button>
+                    <a href="/questions/create" class="float-right btn btn-success text-white rounded">Ask Question +</a>
                 </div>
 
                 <!-- List of question -->
-                @for ($i = 0; $i < 5; $i++)
+                @foreach($questions as $question)
                 <div class="card m-1">
                     <div class="card-header">
                         Wisnu
@@ -22,12 +22,12 @@
                     </div>
                     <div class="card-body">
                         <div>
-                            Siapa nama komting kita?
+                            {{ $question->question_text }}
                         </div>
                         <button class="float-right btn btn-primary text-white">Find More ></button>
                     </div>
                 </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </div>
