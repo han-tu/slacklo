@@ -23,7 +23,7 @@
             <a href="/home"><span class="fa fa-home"></span> Home</a>
           </li>
           <li>
-              <a href="#"><span class="fa fa-book"></span> My Question</a>
+              <a href="/profile"><span class="fa fa-book"></span> Profile</a>
           </li>
           <li>
             <a href="#"><span class="fa fa-star"></span> Popular</a>
