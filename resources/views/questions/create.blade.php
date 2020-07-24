@@ -1,18 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="/questions/store" method="post">
-    @csrf
-    <div class="form-group">
-        <label for="question_text">Pertanyaan</label>
-        <textarea name="question_text"></textarea>
-        @if($errors->has('question_text'))
-            <div class="text-danger">
-                {{ $errors->first('question_text')}}
-            </div>
-        @endif
+<div class="card">
+    <div class="card-header">
+        <h3>New Question</h3>
     </div>
-    <input type="submit" value="POST">
-</form>
 
+    <div class="card-body">
+        <form action="/questions/store" method="post">
+            @csrf
+            <div class="form-group">
+                <label for="question_text">Question</label>
+                <textarea class="form-control" name="question_text" id="question_text" rows="10"></textarea>
+                @if($errors->has('question_text'))
+                    <span class="help-block small text-danger" role="alert">
+                        {{ $errors->first('question_text')}}
+                    </span>
+                @endif
+            </div>
+            <input type="submit" value="POST">
+        </form>
+    </div>    
+</div>
 @endsection
