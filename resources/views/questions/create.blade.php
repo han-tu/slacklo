@@ -18,7 +18,7 @@
                     </span>
                 @endif
             </div>
-            <input type="submit" value="POST">
+            <input class="btn btn-warning my-2 mr-2 float-right" type="submit" value="Post">
         </form>
     </div>    
 </div>

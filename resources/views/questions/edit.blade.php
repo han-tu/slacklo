@@ -35,7 +35,7 @@
                                     </span>
                                 @endif
                             </div>
-                            <input class="btn btn-warning" type="submit" value="Save">
+                            <input class="btn btn-warning my-2 mr-2 float-right" type="submit" value="Save">
                         </form>
                     </div>
                 </div>

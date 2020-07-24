@@ -28,7 +28,9 @@
                     </div>
                 </div>
                 @empty
-                <div>There is no questions</div>
+                <div class="card-body">
+                    <div>Question(s) not found.</div>
+                </div>
                 @endforelse
             </div>
         </div>

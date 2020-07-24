@@ -27,7 +27,9 @@
                     </div>
                 </div>
                 @empty
-                <div>There is no questions</div>
+                <div class="card-body">
+                    <div>You didn't ask a question yet.</div>
+                </div>
                 @endforelse
             </div>
 
@@ -54,7 +56,9 @@
                     </div>
                 </div>
                 @empty
-                <div>There is no answers</div>
+                <div class="card-body">
+                    <div>You didn't answer a question yet.</div>
+                </div>
                 @endforelse
             </div>
         </div>
