@@ -27,6 +27,9 @@ Route::get('/questions/{id}', 'QuestionController@index');
 
 // Answers Route
 Route::post('/answers/store/{id}', 'AnswerController@store');
+Route::get('/answers/edit/{id}', 'AnswerController@edit');
+Route::put('/answers/update/{id}', 'AnswerController@update');
+Route::get('/answers/delete/{id}', 'AnswerController@delete');
 
 Auth::routes();
 

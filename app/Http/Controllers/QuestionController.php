@@ -17,13 +17,9 @@ class QuestionController extends Controller
 
     public function index($id){
         $question = Question::find($id);
-        $answers = Answer::where('question_id', $id);
-        // foreach($answers as $answer){
-        //     dd($answer);
-        // }
-        // dd($answers);
+        $answers = Answer::where('question_id', $id)->get();
         return view('questions.index',
-                    ['question' => $question, 'answers_count' => $answers->count(), 'answers' => $answers]);
+                    ['question' => $question, 'answers' => $answers]);
     }
 
     public function create(){
@@ -61,7 +57,10 @@ class QuestionController extends Controller
         $question = Question::find($id);
         $question->question_text = $request->question_text;
         $question->save();
-        return view('questions.index', ['question' => $question]);
+
+        $answers = Answer::where('question_id', $id)->get();
+        return view('questions.index',
+                    ['question' => $question, 'answers' => $answers]);
     }
 
     public function delete($id){
@@ -71,7 +70,7 @@ class QuestionController extends Controller
             return back();
         }else{
             $question->delete();
-            return view('home', ['questions' => Question::all()]);
+            return redirect('home');
         }
     }
 
