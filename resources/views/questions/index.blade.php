@@ -24,6 +24,29 @@
                             {{ $question->question_text }}
                         </div>
                     </div>
+                    <div class="card-footer">
+                            <div class="card my-1">
+                                <form action="/answers/store/{{ $question->id }}" method="post">
+                                    @csrf
+                                    <input type="text" name="answer_text" placeholder="Comment...">
+                                    <input type="submit" value="Comment">
+                                    @if($errors->has('answer_text'))
+                                        <div class="text-danger">
+                                            {{ $errors->first('answer_text')}}
+                                        </div>
+                                    @endif
+                                </form>
+                            </div>
+                        @forelse($answers as $answer)
+                            <div class="card my-1">
+                                {{ $answer->answer_text }}
+                            </div>
+                        @empty
+                            <div class="card my-1">
+                                There is no comment
+                            </div>
+                        @endforelse
+                    </div>
                 </div>
             </div>
         </div>

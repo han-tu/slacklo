@@ -11,13 +11,13 @@
                 </div>
 
                 <!-- List of question -->
-                @foreach($questions as $question)
+                @forelse($questions as $question)
                 <div class="card m-1">
                     <div class="card-header">
                         Wisnu
                         <span class="float-right">
                             <span class="fa fa-clock-o ml-1"></span>
-                            02:02:10
+                            {{ $question->created_at }}
                         </span>
                     </div>
                     <div class="card-body">
@@ -27,7 +27,9 @@
                         <a href="/questions/{{ $question->id }}" class="float-right btn btn-primary text-white">Find More ></a>
                     </div>
                 </div>
-                @endforeach
+                @empty
+                <div>There is no questions</div>
+                @endforelse
             </div>
         </div>
     </div>

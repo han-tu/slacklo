@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Question;
+use App\Answer;
 
 class QuestionController extends Controller
 {
@@ -15,12 +16,17 @@ class QuestionController extends Controller
 
     public function index($id){
         $question = Question::find($id);
-        return view('questions.index', ['question' => $question]);
+        $answers = Answer::where('question_id', $id);
+        // foreach($answers as $answer){
+        //     dd($answer);
+        // }
+        // dd($answers);
+        return view('questions.index',
+                    ['question' => $question, 'answers_count' => $answers->count(), 'answers' => $answers]);
     }
 
     public function create(){
-        $id = Auth::id();
-        return view('questions.create', ['id' => $id]);
+        return view('questions.create');
     }
 
     public function store(Request $request){
@@ -30,7 +36,7 @@ class QuestionController extends Controller
 
         Question::create([
             'question_text' => $request->question_text,
-            'user_id' => $request->user_id
+            'user_id' => Auth::user()->id
         ]);
 
         return redirect('home');

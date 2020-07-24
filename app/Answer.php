@@ -9,4 +9,8 @@ class Answer extends Model
     protected $fillable = [
         'answer_text', 'user_id', 'question_id'
     ];
+
+    public function questions(){
+        return $this->belongsTo('App\Question');
+    }
 }

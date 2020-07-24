@@ -11,4 +11,8 @@ class Question extends Model
     protected $fillable = [
         'question_text', 'user_id'
     ];
+    
+    public function answers(){
+        return $this->hasMany('App\Answer');
+    }
 }

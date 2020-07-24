@@ -12,7 +12,6 @@
             </div>
         @endif
     </div>
-    <input type="hidden" name="user_id" value="{{ $id }}">
     <input type="submit" value="POST">
 </form>
 
