@@ -1,9 +1,9 @@
 @extends('layouts.app')
-
+@section('title', 'SlackOverlow')
 @section('content')
-<div class="container" style="padding-top: 2rem">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="container" style="border-top: 2rem black">
+    <div class="row">
+        <div class="col">
             <div class="card">
                 <div class="card-header">
                     <span style="font-size: 1.5rem">{{ __('QUESTIONS') }}</span>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 use App\Question;
 
@@ -66,5 +67,13 @@ class QuestionController extends Controller
             $question->delete();
             return view('home', ['questions' => Question::all()]);
         }
+    }
+
+    public function search(Request $request) {
+        $search = $request->search ;
+
+        $quest = DB::table('questions')->where('question_text','like',"%".$search."%")->paginate() ;
+
+        return view('home',['questions' => $quest]);  
     }
 }

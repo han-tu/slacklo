@@ -74,7 +74,7 @@
                                    
 
                                     
-                                        <input id="name" type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        <input id="name" type="text" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="off" autofocus>
                                         <label for="name" class="form-label">{{ __('Name') }}</label>
                                         @error('name')
                                             <span class="help-block small text-danger" role="alert">
@@ -88,7 +88,7 @@
                                     
 
                                     
-                                        <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                        <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="off">
                                         <label for="email" class="form-label">{{ __('E-Mail Address') }}</label>
                                         @error('email')
                                             <span class="help-block small text-danger" role="alert">
@@ -102,7 +102,7 @@
                                     
 
                                     
-                                        <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                        <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="off">
                                         <label for="password" class="form-label">{{ __('Password') }}</label>
                                         @error('password')
                                             <span class="help-block small text-danger" role="alert">
@@ -114,7 +114,7 @@
 
                                 <div class="form-groups form-input">
                                     
-                                    <input id="password-confirm" type="password" class="" name="password_confirmation" required autocomplete="new-password">
+                                    <input id="password-confirm" type="password" class="" name="password_confirmation" required autocomplete="off">
                                     <label for="password-confirm" class="form-label">{{ __('Confirm Password') }}</label>
                                 </div>
 
