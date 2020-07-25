@@ -19,7 +19,7 @@
                         </div>
                         <span class="sec mt-0 pt-0">
                             <span class="fa fa-clock-o"></span>
-                            {{ $question->created_at->diffForHumans() }} &middot; {{ $question->users->name }}
+                            {{ \Carbon\Carbon::parse($question->created_at)->diffForHumans() }} &middot; {{ $question->users->name }}
                         </span>
                         <a href="/questions/{{ $question->id }}" class="float-right btn btn-primary text-white">Find More ></a>
                     </div>
@@ -29,7 +29,6 @@
                     <div>Question(s) not found.</div>
                 </div>
                 @endforelse
-                <div class="d-flex justify-content-center">{{ $questions->links() }}</div>
             </div>
         </div>
     </div>

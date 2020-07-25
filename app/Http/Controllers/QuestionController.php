@@ -78,8 +78,8 @@ class QuestionController extends Controller
     public function search(Request $request) {
         $search = $request->search ;
 
-        $quest = DB::table('questions')->where('question_text','like',"%".$search."%")->paginate() ;
+        $questions = Question::where('question_text','like',"%".$search."%")->orderBy('created_at', 'DESC')->paginate(4); ;
 
-        return view('home',['questions' => $quest]);  
+        return view('home',['questions' => $questions]);  
     }
 }
