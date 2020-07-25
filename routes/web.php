@@ -16,9 +16,7 @@ use App\Answer;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 // Questions Route
 Route::get('/questions/create', 'QuestionController@create');
