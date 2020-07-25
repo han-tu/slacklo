@@ -13,7 +13,7 @@
                 @forelse($myQuestions as $question)
                 <div class="card m-1">
                     <div class="card-header">
-                        Wisnu
+                        {{ $question->users->name }}
                         <span class="float-right">
                             <span class="fa fa-clock-o ml-1"></span>
                             {{ $question->created_at }}
@@ -42,7 +42,7 @@
                 @forelse($myAnswers as $answer)
                 <div class="card m-1">
                     <div class="card-header">
-                        Wisnu
+                        {{ $answer->users->name }}
                         <span class="float-right">
                             <span class="fa fa-clock-o ml-1"></span>
                             {{ $answer->created_at }}

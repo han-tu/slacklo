@@ -9,7 +9,7 @@
                 <!-- List of question -->
                 <div class="card m-1">
                     <div class="card-header">
-                        Wisnu
+                        <span class="font-weight-bold">{{ $question->users->name }}</span>
                         <span class="float-right">
                             <span class="fa fa-clock-o ml-1"></span>
                             {{ $question->created_at }}
@@ -29,6 +29,7 @@
                     <div class="card-footer">
                         @forelse($answers as $answer)
                             <div class="card mt-0 mb-2 p-2">
+                                <p class="font-weight-bold">{{ $answer->users->name }}</p>
                                 <div class="d-flex">
                                     <div class="mr-auto">{{ $answer->answer_text }}</div>
                                     @if(Auth::user()->id == $answer->user_id)
