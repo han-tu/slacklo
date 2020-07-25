@@ -29,6 +29,7 @@
                     <div>Question(s) not found.</div>
                 </div>
                 @endforelse
+                <div class="d-flex justify-content-center">{{ $questions->links() }}</div>
             </div>
         </div>
     </div>

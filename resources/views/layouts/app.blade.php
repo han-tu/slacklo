@@ -26,12 +26,6 @@
           <li>
               <a href="/profile"><span class="fa fa-book"></span> My Profile</a>
           </li>
-          <li>
-            <a href="#"><span class="fa fa-star"></span> Popular</a>
-          </li>
-          <li>
-            <a href="#"><span class="fa fa-user-times"></span> Unanswered</a>
-          </li>
         </ul>
 
         <div class="footer">
