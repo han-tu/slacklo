@@ -59,8 +59,9 @@ class QuestionController extends Controller
         $question->save();
 
         $answers = Answer::where('question_id', $id)->get();
-        return view('questions.index',
-                    ['question' => $question, 'answers' => $answers]);
+        return redirect()->action(
+            'QuestionController@index', ['id' => $id]
+        );
     }
 
     public function delete($id){

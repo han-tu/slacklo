@@ -8,6 +8,10 @@
 
                 <!-- List of question -->
                 <div class="card m-1">
+                    <div class="card-header">
+                        <a class="btn btn-primary float-right" href="/home"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</a>
+                        <h4>Question</h4>
+                    </div>
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="mr-auto">{{ $question->question_text }}</div>
@@ -19,8 +23,14 @@
                             @endif
                         </div>
                         <span class="sec mt-0 pt-0">
-                            <span class="fa fa-clock-o"></span>
-                            {{ $question->created_at->diffForHumans() }} &middot; {{ $question->users->name }}
+                            @if ($question->created_at != $question->updated_at)
+                                Edited &middot; <span class="fa fa-clock-o"></span> {{ $question->updated_at->diffForHumans() }} &middot;&nbsp;
+                            @else
+                                <span class="fa fa-clock-o"></span>
+                                {{ $question->created_at->diffForHumans() }} &middot;&nbsp;
+                            @endif
+                            
+                            {{ $question->users->name }}
                         </span>
                     </div>
                     <div class="card-footer py-1">

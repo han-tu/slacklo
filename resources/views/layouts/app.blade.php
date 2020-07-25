@@ -18,13 +18,13 @@
         
         <div class="wrapper d-flex align-items-stretch">
             <nav id="sidebar" class="active">
-                <h1><a href="index.html" class="logo">S.O</a></h1>
+                <h1><a class="logo">S.O</a></h1>
         <ul class="list-unstyled components mb-5">
           <li class="active">
             <a href="/home"><span class="fa fa-home"></span> Home</a>
           </li>
           <li>
-              <a href="/profile"><span class="fa fa-book"></span> Profile</a>
+              <a href="/profile"><span class="fa fa-book"></span> My Profile</a>
           </li>
           <li>
             <a href="#"><span class="fa fa-star"></span> Popular</a>
@@ -79,7 +79,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }}  <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
