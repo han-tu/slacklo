@@ -23,9 +23,9 @@
                             {{ $question->created_at->diffForHumans() }} &middot; {{ $question->users->name }}
                         </span>
                     </div>
-                    <div class="card-footer pt-0">
+                    <div class="card-footer py-1">
                         @forelse($answers as $answer)
-                            <div class="card mt-0 mb-2 py-2 px-3">
+                            <div class="card my-1 py-2 px-3">
                                 <div class="d-flex">
                                     <div class="mr-auto">{{ $answer->answer_text }}</div>
                                     @if(Auth::user() && Auth::user()->id == $answer->user_id)
