@@ -14,10 +14,10 @@
                 <!-- List of question -->
                 <div class="card m-1">
                     <div class="card-header">
-                        Wisnu
+                        {{ $question->users->name }}
                         <span class="float-right">
                             <span class="fa fa-clock-o ml-1"></span>
-                            02:02:10
+                            {{ $question->created_at }}
                         </span>
                     </div>
                     <div class="card-body">

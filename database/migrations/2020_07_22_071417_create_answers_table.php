@@ -16,8 +16,8 @@ class CreateAnswersTable extends Migration
         Schema::create('answers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('answer_text');
-            $table->bigInteger('user_id');
-            $table->bigInteger('question_id');
+            $table->foreignId('user_id')->nullable()->constrained();
+            $table->foreignId('question_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

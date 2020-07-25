@@ -10,10 +10,10 @@
                 <!-- List of answer -->
                 <div class="card m-1">
                     <div class="card-header">
-                        Wisnu
+                        {{ $answer->users->name }}
                         <span class="float-right">
                             <span class="fa fa-clock-o ml-1"></span>
-                            02:02:10
+                            {{ $answer->created_at }}
                         </span>
                     </div>
                     <div class="card-body">

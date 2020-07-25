@@ -12,17 +12,14 @@
                 <!-- List of question -->
                 @forelse($myQuestions as $question)
                 <div class="card m-1">
-                    <div class="card-header">
-                        Wisnu
-                        <span class="float-right">
-                            <span class="fa fa-clock-o ml-1"></span>
-                            {{ $question->created_at }}
-                        </span>
-                    </div>
                     <div class="card-body">
                         <div>
                             {{ $question->question_text }}
                         </div>
+                        <span class="sec mt-0 pt-0">
+                            <span class="fa fa-clock-o"></span>
+                            {{ $question->created_at->diffForHumans() }} &middot; {{ $question->users->name }}
+                        </span>
                         <a href="/questions/{{ $question->id }}" class="float-right btn btn-primary text-white">Find More ></a>
                     </div>
                 </div>
@@ -41,17 +38,14 @@
                 <!-- List of answer -->
                 @forelse($myAnswers as $answer)
                 <div class="card m-1">
-                    <div class="card-header">
-                        Wisnu
-                        <span class="float-right">
-                            <span class="fa fa-clock-o ml-1"></span>
-                            {{ $answer->created_at }}
-                        </span>
-                    </div>
                     <div class="card-body">
                         <div>
                             {{ $answer->answer_text }}
                         </div>
+                        <span class="sec mt-0 pt-0">
+                            <span class="fa fa-clock-o"></span>
+                            {{ $answer->created_at->diffForHumans() }} &middot; {{ $answer->users->name }}
+                        </span>
                         <a href="/questions/{{ $answer->question_id }}" class="float-right btn btn-primary text-white">Find More ></a>
                     </div>
                 </div>

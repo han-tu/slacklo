@@ -16,7 +16,7 @@ class Question extends Model
         return $this->hasMany('App\Answer');
     }
 
-    public function user() {
-    	return $this->belongsTo(User::class) ;
+    public function users(){
+        return $this->belongsTo('App\User', 'user_id');
     }
 }

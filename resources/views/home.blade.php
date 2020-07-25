@@ -13,17 +13,13 @@
                 <!-- List of question -->
                 @forelse($questions as $question)
                 <div class="card m-1">
-                    <div class="card-header">
-                        Wisnu
-                        
-                    </div>
                     <div class="card-body">
                         <div>
                             {{ $question->question_text }}
                         </div>
-                        <span class="sec">
+                        <span class="sec mt-0 pt-0">
                             <span class="fa fa-clock-o"></span>
-                            {{ $question->created_at->diffForHumans() }}
+                            {{ $question->created_at->diffForHumans() }} &middot; {{ $question->users->name }}
                         </span>
                         <a href="/questions/{{ $question->id }}" class="float-right btn btn-primary text-white">Find More ></a>
                     </div>

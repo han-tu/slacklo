@@ -8,9 +8,6 @@
 
                 <!-- List of question -->
                 <div class="card m-1">
-                    <div class="card-header">
-                        Wisnu
-                    </div>
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="mr-auto">{{ $question->question_text }}</div>
@@ -23,12 +20,12 @@
                         </div>
                         <span class="sec mt-0 pt-0">
                             <span class="fa fa-clock-o"></span>
-                            {{ $question->created_at->diffForHumans() }} &middot; {{ $question->user->name }}
+                            {{ $question->created_at->diffForHumans() }} &middot; {{ $question->users->name }}
                         </span>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer pt-0">
                         @forelse($answers as $answer)
-                            <div class="card mt-0 mb-2 p-2">
+                            <div class="card mt-0 mb-2 py-2 px-3">
                                 <div class="d-flex">
                                     <div class="mr-auto">{{ $answer->answer_text }}</div>
                                     @if(Auth::user() && Auth::user()->id == $answer->user_id)
@@ -38,6 +35,10 @@
                                         </div>
                                     @endif
                                 </div>
+                                <span class="sec mt-0 pt-0">
+                                    <span class="fa fa-clock-o"></span>
+                                    {{ $answer->created_at->diffForHumans() }} &middot; {{ $answer->users->name }}
+                                </span>
                             </div>
                         @empty
                             <div class="card m-2 p-2">
