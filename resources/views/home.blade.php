@@ -15,15 +15,16 @@
                 <div class="card m-1">
                     <div class="card-header">
                         Wisnu
-                        <span class="float-right">
-                            <span class="fa fa-clock-o ml-1"></span>
-                            {{ $question->created_at }}
-                        </span>
+                        
                     </div>
                     <div class="card-body">
                         <div>
                             {{ $question->question_text }}
                         </div>
+                        <span class="sec">
+                            <span class="fa fa-clock-o"></span>
+                            {{ $question->created_at->diffForHumans() }}
+                        </span>
                         <a href="/questions/{{ $question->id }}" class="float-right btn btn-primary text-white">Find More ></a>
                     </div>
                 </div>

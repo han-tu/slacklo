@@ -60,6 +60,11 @@
   border:none;
 }
 
+.sec {
+    font-size: 11px;
+    color: #cccccc;
+}
+
 @media (max-width: 991.98px) {
 
   .as:hover{

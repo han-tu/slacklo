@@ -29,12 +29,12 @@
                             <div class="form-group">
                                 <label for="question_text">Pertanyaan</label>
                                 <textarea class="form-control" name="question_text" id="question_text" rows="10">{{ $question->question_text }}</textarea>
-                                @if($errors->has('question_text'))
-                                    <span class="help-block small text-danger" role="alert">
-                                        {{ $errors->first('question_text')}}
-                                    </span>
-                                @endif
                             </div>
+                            @if($errors->has('question_text'))
+                                <span class="help-block small text-danger" role="alert">
+                                    {{ $errors->first('question_text')}}
+                                </span>
+                            @endif
                             <input class="btn btn-warning my-2 mr-2 float-right" type="submit" value="Save">
                         </form>
                     </div>

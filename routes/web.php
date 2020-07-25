@@ -35,11 +35,7 @@ Route::put('/answers/update/{id}', 'AnswerController@update');
 Route::get('/answers/delete/{id}', 'AnswerController@delete');
 
 // List Question and Answers
-Route::get('/profile', function(){
-    $myAnswers = Answer::where('user_id', Auth::id())->get();
-    $myQuestions = Question::where('user_id', Auth::id())->get();
-    return view('profile', ['myAnswers' => $myAnswers, 'myQuestions' => $myQuestions]);
-});
+Route::get('/profile', 'ProfileController@index');
 
 Auth::routes();
 

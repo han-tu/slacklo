@@ -12,7 +12,7 @@ use App\Answer;
 class QuestionController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['index', 'search']]);
     }
 
     public function index($id){

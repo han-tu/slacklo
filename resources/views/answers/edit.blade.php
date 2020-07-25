@@ -25,12 +25,12 @@
                             <div class="form-group">
                                 <label for="answer_text">Jawaban</label>
                                 <textarea class="form-control" name="answer_text" id="answer_text" rows="10">{{ $answer->answer_text }}</textarea>
-                                @if($errors->has('answer_text'))
-                                    <span class="help-block small text-danger" role="alert">
-                                        {{ $errors->first('answer_text')}}
-                                    </span>
-                                @endif
                             </div>
+                            @if($errors->has('answer_text'))
+                                <span class="help-block small text-danger" role="alert">
+                                    {{ $errors->first('answer_text')}}
+                                </span>
+                            @endif
                             <input class="btn btn-warning" type="submit" value="Save">
                         </form>
                     </div>
